@@ -41,6 +41,7 @@ VS Code에는 텍스트 에티터에 여러 가지 기능을 추가할 수 있�
   ![기본 코드 정렬 설정하기](embeds/setup3.png)
   설정 탭의 상단 검색창에 `format` 을 검색한 후 `Editor: Default Formatter` 설정을 Prettier 확장 프로그램으로 선택 해 줍니다.
 
+  ![설정 열기](embeds/setup4.png)
   다음 `Editor: Format on Save` 를 체크하여 파일을 저장할 때마다 자동으로 코드 정렬이 이루어지도록 합니다.
 
 </details>
