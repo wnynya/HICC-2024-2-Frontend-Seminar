@@ -181,5 +181,5 @@ app.post('/register', (req, res) => {
   console.log(`회원가입 성공: ${account.name} (${req.body.id})`);
 });
 
-const port = 80;
+const port = 49981;
 app.listen(port);
