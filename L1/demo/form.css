@@ -1,0 +1,56 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(230, 230, 230);
+}
+
+.login {
+  padding: 3rem;
+  border-radius: 3rem;
+  background: white;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+}
+.login > h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.login > form > label {
+  display: block;
+  width: 300px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: gray;
+}
+.login > form > input {
+  box-sizing: border-box;
+  display: block;
+  width: 300px;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: solid 2px lightgray;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.login > form > input:focus {
+  border-color: black;
+}
+.login > form > button {
+  display: block;
+  width: 300px;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: solid 2px lightgray;
+  outline: none;
+  background: rgb(255, 198, 106);
+  margin-top: 2rem;
+}

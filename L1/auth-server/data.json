@@ -1,1 +1,1 @@
-{ "accounts": {}, "sessions": {} }
+{"accounts":{"a":{"id":"a","password":"1234","name":"테스트","data":{}},"b":{"id":"b","password":"1234","name":"샌즈","data":{}},"c":{"id":"c","password":"1234","name":"샌즈","data":{}},"d":{"id":"d","password":"1234","name":"샌즈","data":{}}},"sessions":{"7ye4qherusdrwgtvtholm0g4k6fwqw8rwiammpsb5k":{"aid":"a","id":"7ye4qherusdrwgtvtholm0g4k6fwqw8rwiammpsb5k"},"undefined":{"aid":"b"},"q6ekdgr5sm0017teft9za6yywr0lnp8p0zsg8ym0la":{"aid":"b","id":"q6ekdgr5sm0017teft9za6yywr0lnp8p0zsg8ym0la"},"f0p3ie8pbeurzlf9sq7ibywwz8lq09kohr3vcjlzh2":{"aid":"b"}}}
