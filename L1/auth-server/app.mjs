@@ -108,9 +108,7 @@ app.all('*', (req, res, next) => {
   const path = req.path;
   const body = req.body;
   console.log(
-    `\x1b[90m${req.client.ip} [${method}] ${path} ${JSON.stringify(
-      body
-    )}\x1b[0m`
+    `\x1b[0m${req.client.ip} [${method}] ${path} ${JSON.stringify(body)}\x1b[0m`
   );
   next();
 });
@@ -178,7 +176,7 @@ app.post('/register', (req, res) => {
   saveData();
   const account = data.accounts[req.body.id];
   res.send(`회원가입 성공: ${account.name} (${req.body.id})`);
-  console.log(`회원가입 성공: ${account.name} (${req.body.id})`);
+  console.log(`\x1b[92m회원가입 성공: ${account.name} (${req.body.id})\x1b[0m`);
 });
 
 const port = 49981;
