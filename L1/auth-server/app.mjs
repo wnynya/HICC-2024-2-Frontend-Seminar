@@ -105,7 +105,7 @@ app.use((req, res, next) => {
 
 app.all('*', (req, res, next) => {
   const method = req.method;
-  const path = req.path;
+  const path = req.originalUrl;
   const body = req.body;
   console.log(
     `\x1b[96m${
