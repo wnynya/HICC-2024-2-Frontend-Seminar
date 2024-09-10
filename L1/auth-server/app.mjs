@@ -110,7 +110,7 @@ app.all('*', (req, res, next) => {
   console.log(
     `\x1b[96m${
       req.client.ip
-    } \x1b[93m[${method}]\x1b[0m ${path} ${JSON.stringify(body)}\x1b[0m`
+    } \x1b[93m[${method}]\x1b[0m ${path} body: ${JSON.stringify(body)}\x1b[0m`
   );
   next();
 });
