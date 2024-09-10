@@ -110,7 +110,7 @@ app.all('*', (req, res, next) => {
   console.log(
     `\x1b[96m${
       req.client.ip
-    } \x1b[93m[${method}]\x1b[0m ${path} body: ${JSON.stringify(body)}\x1b[0m`
+    } \x1b[93m[${method}]\x1b[0m ${path} ${JSON.stringify(body)}\x1b[0m`
   );
   next();
 });
@@ -126,6 +126,62 @@ app.get('/', (req, res) => {
   } else {
     res.send('로그인 정보가 없습니다.');
   }
+});
+app.get('/login', (req, res) => {
+  if (!req.query.id) {
+    res.status(400).send('로그인 실패: 아이디가 없습니다.');
+    return;
+  }
+  if (!req.query.password) {
+    res.status(400).send('로그인 실패: 비밀번호가 없습니다.');
+    return;
+  }
+  if (!data.accounts[req.query.id]) {
+    res.status(400).send('로그인 실패: 계정을 찾을 수 없습니다.');
+    return;
+  }
+  const account = data.accounts[req.query.id];
+  if (account.password !== req.query.password) {
+    res.status(400).send('로그인 실패: 비밀번호가 일치하지 않습니다.');
+    return;
+  }
+  req.session.aid = req.query.id;
+  req.session.save();
+  res.send(`로그인 성공: ${account.name} (${req.query.id})`);
+});
+app.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.send('로그아웃됨');
+});
+app.get('/register', (req, res) => {
+  if (!req.query.id) {
+    res.status(400).send('회원가입 실패: 아이디 정보가 없습니다.');
+    return;
+  }
+  if (!req.query.password) {
+    res.status(400).send('회원가입 실패: 비밀번호 정보가 없습니다.');
+    return;
+  }
+  if (data.accounts[req.query.id]) {
+    res.status(400).send('회원가입 실패: 이미 존재하는 계정입니다.');
+    return;
+  }
+  const d = JSON.parse(JSON.stringify(req.query));
+  delete d.id;
+  delete d.password;
+  delete d.name;
+  data.accounts[req.query.id] = {
+    id: req.query.id,
+    password: req.query.password,
+    name: req.query.name || '이름없음',
+    data: d,
+  };
+  saveData();
+  const account = data.accounts[req.query.id];
+  res.send(`회원가입 성공: ${account.name} (${req.query.id})`);
+  console.log(
+    `\x1b[92m회원가입 성공: ${account.name} (${req.query.id})\x1b[0m`
+  );
 });
 app.post('/login', (req, res) => {
   if (!req.body.id) {
@@ -150,6 +206,7 @@ app.post('/login', (req, res) => {
   res.send(`로그인 성공: ${account.name} (${req.body.id})`);
 });
 app.post('/logout', (req, res) => {
+  req.session.destroy();
   res.send('로그아웃됨');
 });
 app.post('/register', (req, res) => {
