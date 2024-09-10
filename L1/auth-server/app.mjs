@@ -82,7 +82,7 @@ app.use((req, res, next) => {
     saveData();
   };
   req.session.destroy = () => {
-    const opt = JSON.parse(JSON.stringify(options.cookie));
+    const opt = JSON.parse(JSON.stringify(cpt));
     opt.maxAge = 0;
     res.cookie(cid, sid, opt);
 
