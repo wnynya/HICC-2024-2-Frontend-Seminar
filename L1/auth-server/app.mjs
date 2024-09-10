@@ -182,6 +182,9 @@ app.post('/register', (req, res) => {
     `  \x1b[92m회원가입 성공: ${account.name} (${req.body.id})\x1b[0m`
   );
 });
+app.all('*', (req, res) => {
+  res.status(404).send('Not Found');
+});
 
 const port = 49981;
 app.listen(port);
