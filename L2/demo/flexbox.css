@@ -1,0 +1,15 @@
+.wrapper {
+  width: 600px;
+  height: 600px;
+  background: yellow;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.item {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}
