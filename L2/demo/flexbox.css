@@ -1,16 +1,21 @@
 .container {
   width: 600px;
-  height: 600px;
   background: yellow;
 
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  column-gap: 10px;
+  row-gap: 20px;
+  flex-wrap: wrap;
 }
 .item {
-  width: 150px;
-  height: 150px;
+  flex: 1;
   background-color: blue;
+  color: white;
+  font-size: 25pt;
+}
+.item2 {
+  flex: 2;
 }

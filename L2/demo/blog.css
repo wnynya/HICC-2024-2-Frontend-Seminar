@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+}
+
+.outwrapper {
+}
+.wrapper {
+  max-width: 720px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+nav > #search {
+  width: 100%;
+  height: 50px;
+  background: rgb(49, 224, 49);
+}
+#search > .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav > #buttons {
+  width: 100%;
+  height: 40px;
+  background: white;
+}
+
+header {
+  width: 100%;
+  height: 300px;
+  background: rgb(245, 245, 245);
+}
+header > .wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+header > .wrapper > .left {
+  width: 500px;
+  height: 300px;
+}
+header > .wrapper > .right {
+  width: 200px;
+  height: 300px;
+}
+
+main {
+  width: 100%;
+}
+main > .wrapper {
+  display: flex;
+  gap: 20px;
+}
+main > .wrapper > #articles {
+  width: 500px;
+}
+#articles > article {
+  display: flex;
+}
+#articles > article > .text {
+  flex: 3;
+  height: 200px;
+}
+#articles > article > .image {
+  flex: 1;
+  height: 200px;
+}
+#articles > article > .image > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: gray;
+}
+main > .wrapper > aside {
+  width: 200px;
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background: rgb(245, 245, 245);
+}
+footer > .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
