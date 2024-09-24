@@ -1,0 +1,23 @@
+.container {
+  width: 600px;
+  background: yellow;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 10px;
+}
+.item {
+  height: 200px;
+}
+.item1 {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background-color: blue;
+}
+.item2 {
+  background-color: red;
+}
+.item3 {
+  background-color: green;
+}

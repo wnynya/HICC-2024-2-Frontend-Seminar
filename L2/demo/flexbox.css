@@ -1,7 +1,8 @@
-.wrapper {
+.container {
   width: 600px;
   height: 600px;
   background: yellow;
+
   display: flex;
   flex-direction: row;
   gap: 10px;
