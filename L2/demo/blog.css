@@ -39,10 +39,12 @@ header > .wrapper {
 header > .wrapper > .left {
   width: 500px;
   height: 300px;
+  background: red;
 }
 header > .wrapper > .right {
   width: 200px;
   height: 300px;
+  background: blue;
 }
 
 main {
